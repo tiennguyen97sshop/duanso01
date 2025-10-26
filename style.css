@@ -1,0 +1,109 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: radial-gradient(circle, #ffefba, #ffffff);
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #d11a2a;
+}
+
+.inputs {
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 300px;
+  height: 60px;
+  margin: 5px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background: #d11a2a;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #b00f1e;
+}
+
+.wheel-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+#wheel {
+  border: 8px solid #d11a2a;
+  border-radius: 50%;
+}
+
+#spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: gold;
+  color: black;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: 18px;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #d11a2a;
+  color: white;
+}
+
+#popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #000;
+}
+
+.hidden { display: none; }
+
+#fireworks {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #444;
+}

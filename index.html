@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vòng quay lì xì may mắn 🎁 - by Tiến Nguyễn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎉 Vòng quay lì xì may mắn 🎉</h1>
+
+  <div class="inputs">
+    <div>
+      <label>Danh sách tên (cách nhau bằng dấu phẩy):</label><br>
+      <textarea id="names"></textarea><br>
+      <button id="saveNames">💾 Lưu Tên</button>
+      <button id="clearNames">🧹 Xóa Tên</button>
+    </div>
+    <div>
+      <label>Danh sách quà (cách nhau bằng dấu phẩy):</label><br>
+      <textarea id="gifts"></textarea><br>
+      <button id="saveGifts">💾 Lưu Quà</button>
+      <button id="clearGifts">🧹 Xóa Quà</button>
+    </div>
+    <button id="clearAll">❌ Xóa Toàn Bộ Dữ Liệu</button>
+    <button id="toggleMusic">🔈 Bật/Tắt Nhạc</button>
+  </div>
+
+  <div class="wheel-container">
+    <canvas id="wheel" width="400" height="400"></canvas>
+    <button id="spin">🎡 Quay</button>
+  </div>
+
+  <h2>📜 Danh sách người nhận quà</h2>
+  <table id="resultTable">
+    <thead>
+      <tr><th>Tên</th><th>Quà</th><th>Thời gian</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Popup kết quả -->
+  <div id="popup" class="hidden">
+    <div class="popup-content">
+      <h3 id="popupTitle"></h3>
+      <p id="popupMessage"></p>
+      <button id="closePopup">Đóng</button>
+    </div>
+  </div>
+
+  <canvas id="fireworks"></canvas>
+
+  <!-- Âm thanh -->
+  <audio id="spinSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7d2d57f66c.mp3?filename=spin-wheel-1.mp3"></audio>
+  <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/03/09/audio_bdb2b1429e.mp3?filename=happy-holiday-11096.mp3" loop></audio>
+
+  <footer>
+    <p>© 2025 - Vòng quay lì xì may mắn | Thiết kế bởi <strong>Tiến Nguyễn</strong> ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
