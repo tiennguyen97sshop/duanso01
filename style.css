@@ -1,109 +1,121 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background: radial-gradient(circle, #ffefba, #ffffff);
-  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  color: #333;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 10px;
 }
 
 h1 {
-  color: #d11a2a;
+  color: #b30000;
 }
 
 .inputs {
-  margin-bottom: 20px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  margin: 10px 0;
 }
 
 textarea {
-  width: 300px;
-  height: 60px;
-  margin: 5px;
+  width: 95%;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  padding: 5px;
+  resize: vertical;
 }
 
 button {
-  margin: 5px;
-  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: #fff;
   border: none;
-  background: #d11a2a;
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: background 0.3s;
 }
 
 button:hover {
-  background: #b00f1e;
+  background-color: #9a0007;
 }
 
 .wheel-container {
   position: relative;
   display: inline-block;
-  margin-top: 20px;
 }
 
-#wheel {
-  border: 8px solid #d11a2a;
+#wheelCanvas {
+  border: 6px solid #b30000;
   border-radius: 50%;
+  background: #fff;
 }
 
-#spin {
+#spinBtn {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: gold;
-  color: black;
+  background-color: #ffca28;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 24px;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  font-size: 18px;
 }
 
 table {
-  margin: 20px auto;
+  width: 100%;
+  background: #fff;
   border-collapse: collapse;
-  width: 80%;
+  margin-top: 10px;
 }
 
 th, td {
-  border: 1px solid #ddd;
   padding: 8px;
+  border: 1px solid #ccc;
 }
 
-th {
-  background-color: #d11a2a;
-  color: white;
-}
-
-#popup {
+.popup {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.hidden {
+  display: none;
+}
+
 .popup-content {
-  background: white;
-  padding: 20px 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #000;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
 }
 
-.hidden { display: none; }
-
-#fireworks {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-}
-
-footer {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #444;
+@media (max-width: 600px) {
+  textarea {
+    width: 100%;
+  }
+  #wheelCanvas {
+    width: 250px !important;
+    height: 250px !important;
+  }
 }
