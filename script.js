@@ -36,7 +36,7 @@ function clearAll() {
 }
 
 function drawWheel() {
-  const numSlices = gifts.length;
+  const numSlices = gifts.length || 1;
   const angle = 2 * Math.PI / numSlices;
   for (let i = 0; i < numSlices; i++) {
     const start = i * angle;
@@ -47,14 +47,16 @@ function drawWheel() {
     ctx.fillStyle = randomColor();
     ctx.fill();
     ctx.stroke();
-    ctx.save();
-    ctx.translate(150, 150);
-    ctx.rotate(start + angle / 2);
-    ctx.textAlign = 'right';
-    ctx.fillStyle = '#000';
-    ctx.font = '14px sans-serif';
-    ctx.fillText(gifts[i], 140, 5);
-    ctx.restore();
+    if (gifts.length > 0) {
+      ctx.save();
+      ctx.translate(150, 150);
+      ctx.rotate(start + angle / 2);
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#000';
+      ctx.font = '14px sans-serif';
+      ctx.fillText(gifts[i], 140, 5);
+      ctx.restore();
+    }
   }
 }
 
@@ -71,12 +73,7 @@ function spin() {
   spinning = true;
   const randomName = names[Math.floor(Math.random() * names.length)];
   const special = Math.random() < 0.01 && gifts.includes('Giải đặc biệt');
-  let selectedGift;
-  if (special) {
-    selectedGift = 'Giải đặc biệt';
-  } else {
-    selectedGift = gifts[Math.floor(Math.random() * gifts.length)];
-  }
+  let selectedGift = special ? 'Giải đặc biệt' : gifts[Math.floor(Math.random() * gifts.length)];
   const spinAngle = 360 * 5 + Math.random() * 360;
   const duration = 4000;
   const start = Date.now();
@@ -103,7 +100,7 @@ function spin() {
 
 function showResult(name, gift, isSpecial) {
   popupMessage.textContent = `${name} nhận được ${gift}!`;
-  popup.classList.remove('hidden');
+  popup.classList.add('show');
   const record = { name, gift, time: new Date().toLocaleString() };
   results.push(record);
   localStorage.setItem('results', JSON.stringify(results));
@@ -140,7 +137,7 @@ function fireworks() {
 document.getElementById('saveLists').onclick = saveLists;
 document.getElementById('clearAll').onclick = clearAll;
 spinBtn.onclick = spin;
-closePopup.onclick = () => popup.classList.add('hidden');
+closePopup.onclick = () => popup.classList.remove('show');
 
 loadLists();
 drawWheel();
